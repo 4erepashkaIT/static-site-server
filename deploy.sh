@@ -17,7 +17,7 @@ if [ ! -f site/index.html ]; then
   exit 1
 fi
 
-# Rule 2: Linux is case-sensitive. Stop if any file name has capitals or spaces (that's optionally, you can use capitals in names, but it's a good practice to avoid them).
+# Rule 1: Linux is case-sensitive, so keep file names lowercase without spaces.
 bad_names=$(LC_ALL=C find site -name '*[A-Z ]*' ! -name '.DS_Store')
 if [ -n "$bad_names" ]; then
   echo "Error: rename these to lowercase without spaces:" >&2
@@ -25,7 +25,7 @@ if [ -n "$bad_names" ]; then
   exit 1
 fi
 
-# Rule 1: no absolute paths from the Mac.
+# Rule 2: no absolute paths from the Mac.
 if grep -rnI '/Users/' site; then
   echo "Error: absolute Mac paths found above, use relative paths" >&2
   exit 1
