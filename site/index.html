@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Igor Tsoy — on the way to DevOps</title>
+  <meta name="description" content="Igor Tsoy — Applied Computer Science student learning Linux and DevOps through hands-on roadmap.sh projects.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="page">
+
+    <header class="hero">
+      <img class="avatar" src="images/avatar.jpg" alt="Photo of Igor Tsoy" width="160" height="160">
+      <div>
+        <p class="prompt">igor@vps:~$ whoami</p>
+        <h1>Igor Tsoy</h1>
+        <p class="tagline">Junior Linux / DevOps engineer in training</p>
+      </div>
+    </header>
+
+    <section>
+      <h2>About me</h2>
+      <p>
+        I'm a final-year Applied Computer Science student at SUAI (Russia),
+        graduating in spring 2026. I've tried frontend, Android, Unity and QA, and the part
+        I enjoyed most was always the infrastructure underneath: servers, networks,
+        and the things that keep an application running.
+      </p>
+      <p>
+        So I chose the infrastructure track. My plan is to start as a Linux system
+        administrator or technical support engineer and grow into DevOps / SRE.
+        I learn by doing: I rent my own VPS running Ubuntu 24.04, follow the
+        <a href="https://roadmap.sh/devops">roadmap.sh DevOps roadmap</a>,
+        and keep notes and an incident log for everything that breaks.
+      </p>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <p class="muted">Each one is a project from roadmap.sh, built and running on my own server.</p>
+
+      <ol class="projects">
+        <li>
+          <h3>SSH Remote Server Setup</h3>
+          <p>
+            Set up a VPS with key-only SSH access: my own sudo user instead of root,
+            password login and root login disabled through an <code>sshd_config.d</code> drop-in,
+            host aliases in <code>~/.ssh/config</code>, and fail2ban protecting SSH.
+          </p>
+          <p class="links">
+            <a href="https://github.com/GITHUB_USERNAME/ssh-remote-server-setup">Repository</a>
+            <a href="https://roadmap.sh/projects/ssh-remote-server-setup">Task on roadmap.sh</a>
+          </p>
+        </li>
+
+        <li>
+          <h3>Server Performance Stats</h3>
+          <p>
+            A Bash script that reports CPU, memory and disk usage, load average,
+            uptime and the top processes by CPU and memory. Written with functions,
+            <code>awk</code> and <code>vmstat</code>; deployed to the server with Git.
+          </p>
+          <p class="links">
+            <a href="https://github.com/GITHUB_USERNAME/server-performance-stats">Repository</a>
+            <a href="https://roadmap.sh/projects/server-stats">Task on roadmap.sh</a>
+          </p>
+        </li>
+
+        <li>
+          <h3>Log Archive Tool</h3>
+          <p>
+            A CLI tool that compresses a log directory into a timestamped
+            <code>tar.gz</code>, verifies the archive by restoring it, deletes old archives
+            and runs on a schedule with a systemd timer.
+          </p>
+          <p class="links">
+            <a href="https://github.com/GITHUB_USERNAME/log-archive-tool">Repository</a>
+            <a href="https://roadmap.sh/projects/log-archive-tool">Task on roadmap.sh</a>
+          </p>
+        </li>
+
+        <li>
+          <h3>Static Site Server <span class="badge">you are here</span></h3>
+          <p>
+            This website. Static HTML and CSS served by nginx on my VPS,
+            deployed from my laptop with a single <code>rsync</code> script.
+          </p>
+          <p class="links">
+            <a href="https://github.com/GITHUB_USERNAME/static-site-server">Repository</a>
+            <a href="https://roadmap.sh/projects/static-site-server">Task on roadmap.sh</a>
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>What I work with</h2>
+      <ul class="tags">
+        <li>Linux (Ubuntu)</li>
+        <li>Bash</li>
+        <li>SSH</li>
+        <li>systemd</li>
+        <li>fail2ban</li>
+        <li>Git &amp; GitHub</li>
+        <li>nginx</li>
+        <li>rsync</li>
+      </ul>
+      <h3 class="next-title">Learning next</h3>
+      <ul class="tags tags-next">
+        <li>Networking &amp; DNS</li>
+        <li>ufw</li>
+        <li>HTTPS</li>
+        <li>Docker</li>
+        <li>Ansible</li>
+        <li>Terraform</li>
+        <li>CI/CD</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>I'm looking for my first job in Linux administration, technical support or DevOps. Feel free to reach out.</p>
+      <p class="links contacts">
+        <a href="https://github.com/GITHUB_USERNAME">GitHub</a>
+        <a href="https://t.me/TELEGRAM_USERNAME">Telegram</a>
+      </p>
+    </section>
+
+    <footer>
+      <p>Served by nginx from my own VPS · Built for the roadmap.sh Static Site Server project</p>
+    </footer>
+
+  </main>
+</body>
+</html>

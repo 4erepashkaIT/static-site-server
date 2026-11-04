@@ -1,0 +1,221 @@
+/* Simple one-page layout. No external fonts or libraries: the site loads fast
+   and has nothing to break on the server. */
+
+:root {
+  --bg: #f7f7f5;
+  --card: #ffffff;
+  --text: #1f2328;
+  --muted: #5f6670;
+  --accent: #1a7f5a;
+  --border: #e3e3df;
+  --code-bg: #eef1ee;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111416;
+    --card: #181c1f;
+    --text: #e6e8ea;
+    --muted: #9aa3ab;
+    --accent: #4cc38a;
+    --border: #2a3035;
+    --code-bg: #20262a;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 20px 32px;
+}
+
+/* Header */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  flex-shrink: 0;
+}
+
+.prompt,
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.prompt {
+  margin: 0;
+  color: var(--accent);
+  font-size: 15px;
+}
+
+h1 {
+  margin: 4px 0;
+  font-size: 40px;
+  line-height: 1.15;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--muted);
+  font-size: 19px;
+}
+
+/* Sections */
+section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 24px;
+}
+
+h3 {
+  margin: 0 0 6px;
+  font-size: 19px;
+}
+
+p {
+  margin: 0 0 12px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  border-bottom-color: var(--accent);
+}
+
+code {
+  background: var(--code-bg);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Projects */
+.projects {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+
+.projects li {
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+}
+
+.projects li:last-child {
+  padding-bottom: 0;
+}
+
+.badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--card);
+  font-size: 12px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.links a {
+  margin-right: 18px;
+  font-weight: 600;
+}
+
+/* Skills */
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags li {
+  padding: 4px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  font-size: 15px;
+}
+
+.tags-next li {
+  border-style: dashed;
+  border-color: var(--muted);
+  color: var(--muted);
+}
+
+.next-title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.contacts a {
+  font-size: 18px;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Phones */
+@media (max-width: 560px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  section {
+    padding: 20px;
+  }
+}
